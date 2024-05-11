@@ -1,8 +1,8 @@
-package serr
+package slice
 
 import "testing"
 
-func TestArrayToString(t *testing.T) {
+func TestSliceToString(t *testing.T) {
 	type args struct {
 		strArr   []string
 		delim    string
@@ -46,8 +46,8 @@ func TestArrayToString(t *testing.T) {
 
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			if gotOut := ArrayToString(tt.args.strArr, tt.args.delim, tt.args.limit, tt.args.listName); gotOut != tt.wantOut {
-				t.Errorf("ArrayToString() = %v, want %v", gotOut, tt.wantOut)
+			if gotOut := SliceToString(tt.args.strArr, tt.args.delim, tt.args.limit, tt.args.listName); gotOut != tt.wantOut {
+				t.Errorf("SliceToString() = %v, want %v", gotOut, tt.wantOut)
 			}
 		})
 	}
