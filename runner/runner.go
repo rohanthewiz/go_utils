@@ -56,7 +56,7 @@ func RunWithRetry(options RetryOptions, failureMsg string, fn RunnerFunc, args .
 
 		if data, err = fn(args...); err != nil {
 			if tries <= 0 {
-				return data, errors.New(failureMsg) // after n retries)
+				return data, errors.New(failureMsg + " - " + err.Error()) // after n retries - maybe we should wrap here
 			} else {
 				tries--
 				fmt.Println("Sleeping for:", waitDuration.String())
@@ -64,6 +64,7 @@ func RunWithRetry(options RetryOptions, failureMsg string, fn RunnerFunc, args .
 				continue
 			}
 		}
+
 		break
 	}
 	return
