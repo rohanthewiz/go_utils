@@ -5,6 +5,8 @@ This is a collection of useful Go utils
 The tests are the examples
 
 ## Contributing
+1. To avoid import loops, these utils should be low-level in the package hierarchy, so keep dependencies at minimum
+1. Do use any external wrappers (like SErr), or external loggers here.
 1. Follow the general code structure
-2. Try to use the most efficient code
-3. Aim to test all paths of any utility -  with AI there is no excuse - test all the things! 
+1. Try to use the most efficient code
+1. Aim to test all paths of any utility -  with AI there is no excuse - test all the things! 
